@@ -1,20 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router"; // Usa Routes en lugar de Switch
-import  MessProvider  from "./componentes/MessProvider";
-import { MessContext } from "./componentes/MessContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { MessProvider } from "./componentes/MessContext";
+import MessageList from "./componentes/MessageList"; // Cambiado a MessProvider
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./componentes/NavBar";
+import Mensajes from "./componentes/Mensajes";
 
 function App() {
   return (
-    <BrowserRouter>
-  
-    <MessContext> 
-   
+    <MessProvider>
+      <Router>
+        <NavBar/>
         <Routes>
-          <Route path="/" element={<MessProvider />} /> 
+          <Route path="/" element={<MessageList />} />
+          <Route path="contacto/:nombre" element={<Mensajes />} />
         </Routes>
-      
-    </MessContext>
-    </BrowserRouter>
+      </Router>
+    </MessProvider>
   );
 }
 

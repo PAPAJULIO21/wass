@@ -3,6 +3,7 @@
   "chats": [
     {
       "contacto": "Kelly",
+      "imagen": "Kelly.jpeg",
       "mensajes": [
         {
           "emisor": "Ryan",
@@ -26,6 +27,7 @@
     },
     {
       "contacto": "Dwight",
+      "imagen": "Dwight.jpeg",
       "mensajes": [
         {
           "emisor": "Ryan",

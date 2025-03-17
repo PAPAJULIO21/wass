@@ -1,23 +1,23 @@
 import React, { createContext, useState, useEffect } from "react";
 
 // Creamos el contexto
-export const MessContext = createContext();
+export const WeatherContext = createContext();
 
 // Provider que carga el JSON y provee los datos a sus hijos
-export const MessProvider = ({ children }) => {
-  const [messages, setMessages] = useState({}); // Inicializamos como objeto
+export const WeatherProvider = ({ children }) => {
+  const [tiempo, setTiempo] = useState([]); // Inicializamos como objeto
 
   useEffect(() => {
-    fetch("/mensajes.json")
+    fetch("/weather.json")
       .then((response) => response.json())
-      .then((data) => setMessages(data))
+      .then((data) => setTiempo(data.ciudades))
       .catch((error) => console.error("Error al cargar mensajes.json:", error));
   }, []);
 
   return (
-    <MessContext.Provider value={{ messages }}>
+    <WeatherContext.Provider value={{ tiempo }}>
       {children}
-    </MessContext.Provider>
+    </WeatherContext.Provider>
   );
 };
 

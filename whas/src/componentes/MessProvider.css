@@ -1,0 +1,12 @@
+.carusell{
+    height: 320px;
+}
+
+.centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
